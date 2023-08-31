@@ -1,0 +1,9 @@
+.header {
+    background: var(--bg-col-2);
+    color: var(--pry-col);
+    padding: 1rem;
+}
+
+.h3 {
+    font-style: italic;
+}
