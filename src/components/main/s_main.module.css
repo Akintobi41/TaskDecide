@@ -2,17 +2,24 @@
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    /* width: clamp(70%, 80%, 1240px); */
+    max-width: 500px;
+    margin: auto;
+}
+
+.shrink {
+    opacity: .1;
 }
 
 .p {
-    color: var(--pry-col);
     text-align: center;
     line-height: 25px;
-    margin-bottom: 2rem;
+    font-weight: bold;
+    padding: 0 2rem;
+    max-width: 500px;
+    margin: 1rem auto;
 }
 
-@supports (font-size: clamp(1rem, 2.5vw, 3rem)) {
+@supports (font-size: clamp(1rem, 2vw, 3rem)) {
     .p {
         font-size: clamp(1rem, 2vw, 3rem);
     }
@@ -22,61 +29,85 @@ button {
     cursor: pointer;
 }
 
+.delete {
+    width: 30%;
+    height: 1.5rem;
+    background: var(--sec-col);
+    border: solid .5px #749BC2;
+}
+
 .button {
-    background-color: #F9F9FA;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    color: #0A0A0B;
+    background-color: var(--sec-col);
+    color: var(--pry-col);
     box-shadow: 0 2px 4px rgba(10, 10, 11, 0.1),
         0 4px 8px rgba(10, 10, 11, 0.001);
+    font-style: italic;
+    font-weight: bold;
+    letter-spacing: 0.4px;
 }
 
 .input-section {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .input {
     width: 70%;
     height: 2rem;
     padding: 0 .4rem;
+    border: solid .1px var(--bg-col-3);
+    outline: none;
+}
+
+.input:focus,
+.input:hover,
+.input:active {
+    border-bottom: solid .1px var(--bg-col-3);
 }
 
 .select-button {
     width: 30%;
     height: 2rem;
+    background: var(--sec-col);
+    color: var(--pry-col);
+    border: none;
 }
-
-/* 
-.task {
-    border: 1px solid green;
-} */
 
 .ul {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin: 1rem 0;
+
 }
 
 .li {
     list-style-position: inside;
     color: var(--pry-col);
+    width: 80%;
 }
 
 .list-parent {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: .5rem 0;
+    border-bottom: solid 0.5px var(--bg-col-2);
+    padding: 0.5rem 0;
 }
 
 .add {
-    margin-top: 2rem;
+    margin-top: 1rem;
     opacity: 1;
     text-align: center;
+    font-size: clamp(.8rem, 1vw, 1rem);
+    letter-spacing: .2px;
+    font-style: italic;
 }
 
 .hide {
@@ -96,10 +127,35 @@ button {
 .pop-up-text {
     width: 15rem;
     height: 15rem;
-    background: red;
+    padding: 1rem;
+    background: var(--sec-col);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
+}
+
+.suggested-text {
+    margin: 1rem 0;
+    font-weight: bold;
+}
+
+.suggested-button {
+    padding: .5rem 2.5rem;
+}
+
+.hide-popUp {
+    display: none;
+}
+
+.remove {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    font-size: .8rem;
+}
+
+.remove-all {
+    cursor: pointer;
 }

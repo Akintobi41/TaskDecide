@@ -1,9 +1,11 @@
 :root {
-    --pry-col: #0A0A0B;
-    --sec-col: #363748;
-    --bg-col: #F9F9FA;
-    --bg-col-2: #5111f3;
+    --pry-col: #040A1B;
+    --sec-col: #668BC4;
+    --bg-col: #FEFEFE;
+    --bg-col-2: #335495;
+    --bg-col-3: #A5BECF;
     --text-col: #363748;
+
 }
 
 *,
@@ -18,4 +20,6 @@ body {
     width: 100%;
     height: 100%;
     font-family: "Lato", sans-serif;
+    background: var(--bg-col);
+    color: var(--pry-col);
 }

@@ -1,61 +1,32 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import s from "./s_main.module.css";
+import useOption from "./useOption";
 const Main = () => {
-  const [name, setName] = useState("");
-  const [task, setTask] = useState([]);
-  const [select, setSelect] = useState(false);
-  const [checkName, setCheckName] = useState(false);
-  const [num, setNum] = useState(0);
-  const [popUp, setPopUp] = useState(false);
-  const [text, setText] = useState("");
-
-  const handleClick = () => {
-    setNum(1 + num);
-    setName(name);
-    // console.log(name.length);
-    // console.log(task.length);
-    // console.log(num);
-    !name.length || name.startsWith(" ")
-      ? setCheckName(true)
-      : update();
-    // : setSelect(false);
-    // console.log(select);
-    setName("");
-  };
-  const handleDelete = (id) => {
-    setTask(
-      task.filter((e, i) => {
-        return i != id;
-      })
-    );
-  };
-  function update() {
-    setTask([...task, name]);
-    setCheckName(false);
-  }
-
-  useEffect(() => {
-    num && !task.length
-      ? setSelect(true)
-      : setSelect(false);
-  }, [num, task, select]);
-
-  const rndm = () => {
-    setPopUp(true);
-    setText(task[Math.floor(Math.random() * task.length)]);
-  };
-
-  const Random = () => {
-    setNum(1 + num);
-    task.length ? rndm() : undefined;
-  };
-
+  const {
+    Random,
+    name,
+    setName,
+    setPopUp,
+    text,
+    popUp,
+    select,
+    checkName,
+    handleClick,
+    handleDelete,
+    task,
+    removeAll,
+  } = useOption();
   return (
     <>
-      <section className={s["main-container"]}>
-        <p className={s.p}>
-          Explore Options, Embrace Fun: Your Day, Your Way!
-        </p>
+      {" "}
+      <p className={s.p}>
+        Explore Options, Embrace Fun: Your Day, Your Way!
+      </p>
+      <section
+        className={`${s["main-container"]} ${
+          popUp ? s.shrink : ""
+        }`}
+      >
         <button className={s.button} onClick={Random}>
           {" "}
           Help Me Decide
@@ -73,6 +44,7 @@ const Main = () => {
             type="text"
             className={s.input}
             value={name}
+            autoComplete="true"
             onChange={(e) => setName(e.target.value)}
           />
           <button
@@ -83,11 +55,23 @@ const Main = () => {
           </button>
         </section>
         <section className={s.task}>
+          <div className={s.remove}>
+            <p className="opt">Your options</p>
+            <p
+              className={s["remove-all"]}
+              onClick={removeAll}
+            >
+              Delete All
+            </p>
+          </div>
           <ol className={s.ul}>
             {task.map((el, i) => (
               <section className={s["list-parent"]} key={i}>
                 <li className={s.li}>{el}</li>
-                <button onClick={() => handleDelete(i)}>
+                <button
+                  onClick={() => handleDelete(i)}
+                  className={s.delete}
+                >
                   delete
                 </button>
               </section>
@@ -96,10 +80,19 @@ const Main = () => {
         </section>
       </section>
       <section
-        className={`${popUp ? s["pop-up"] : s.hide}`}
+        className={`${
+          popUp ? s["pop-up"] : s["hide-popUp"]
+        }`}
       >
         <section className={s["pop-up-text"]}>
-          <p>{text}</p> <button>OK</button>
+          <p>Well, you have a choice now!</p>
+          <p className={s["suggested-text"]}>{text}</p>{" "}
+          <button
+            className={s["suggested-button"]}
+            onClick={() => setPopUp(false)}
+          >
+            OK
+          </button>
         </section>
       </section>
     </>

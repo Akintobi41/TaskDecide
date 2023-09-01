@@ -1,9 +1,12 @@
 .header {
-    background: var(--bg-col-2);
-    color: var(--pry-col);
+    display: flex;
+    align-items: center;
+    background: var(--sec-col);
     padding: 1rem;
+    margin-bottom: 2rem;
 }
 
 .h3 {
     font-style: italic;
+    font-size: clamp(1.5rem, 3.5vw, 4rem);
 }
