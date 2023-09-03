@@ -34,7 +34,6 @@ const useOption = () => {
   useEffect(() => {
     localStorage.setItem('task', JSON.stringify(task))
     num && !task.length ? setSelect(true) : setSelect(false);
-    console.log(task)
   }, [num, task]);
 
   const rndm = () => {

@@ -1,7 +1,8 @@
 // import { useEffect, useState } from "react";
 import s from "./s_main.module.css";
 import useOption from "./useOption";
-const Main = () => {
+import DarkMode from "../dark-mode/DarkMode";
+const Main = ({ toggle, setToggle }) => {
   const {
     Random,
     name,
@@ -18,7 +19,7 @@ const Main = () => {
   } = useOption();
   return (
     <>
-      {" "}
+      <DarkMode setToggle={setToggle} toggle={toggle} />
       <p className={s.p}>
         Explore Options, Embrace Fun: Your Day, Your Way!
       </p>
@@ -27,7 +28,10 @@ const Main = () => {
           popUp ? s.shrink : ""
         }`}
       >
-        <button className={s.button} onClick={Random}>
+        <button
+          className={`${s.button} ${toggle ? s.dark : ""}`}
+          onClick={Random}
+        >
           {" "}
           Help Me Decide
         </button>
@@ -48,7 +52,9 @@ const Main = () => {
             onChange={(e) => setName(e.target.value)}
           />
           <button
-            className={s["select-button"]}
+            className={`${s["select-button"]} ${
+              toggle ? s.dark : ""
+            }`}
             onClick={(e, el) => handleClick(e, el)}
           >
             Add option
@@ -66,11 +72,24 @@ const Main = () => {
           </div>
           <ol className={s.ul}>
             {task.map((el, i) => (
-              <section className={s["list-parent"]} key={i}>
-                <li className={s.li}>{el}</li>
+              <section
+                className={`${s["list-parent"]} ${
+                  toggle ? s["parent-dark"] : ""
+                } `}
+                key={i}
+              >
+                <li
+                  className={`${s.li} ${
+                    toggle ? s.dark : ""
+                  }`}
+                >
+                  {el}
+                </li>
                 <button
                   onClick={() => handleDelete(i)}
-                  className={s.delete}
+                  className={`${s.delete} ${
+                    toggle ? s.dark : ""
+                  }`}
                 >
                   delete
                 </button>

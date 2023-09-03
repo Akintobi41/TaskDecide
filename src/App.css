@@ -22,4 +22,11 @@ body {
     font-family: "Lato", sans-serif;
     background: var(--bg-col);
     color: var(--pry-col);
+    transition: background .7s;
+}
+
+body.dark {
+    background-color: var(--pry-col);
+    color: var(--bg-col);
+    transition: background .3s;
 }
