@@ -2,11 +2,11 @@
 import s from "./s_main.module.css";
 import useOption from "./useOption";
 import DarkMode from "../dark-mode/DarkMode";
+import PopUp from "../popup/PopUp";
 const Main = ({ toggle, setToggle }) => {
   const {
     Random,
     name,
-    setName,
     setPopUp,
     text,
     popUp,
@@ -16,11 +16,12 @@ const Main = ({ toggle, setToggle }) => {
     handleDelete,
     task,
     removeAll,
+    handleChange,
   } = useOption();
   return (
     <>
       <DarkMode setToggle={setToggle} toggle={toggle} />
-      <p className={s.p}>
+      <p className={`${s.p} ${popUp ? s["p-text"] : ""}`}>
         Explore Options, Embrace Fun: Your Day, Your Way!
       </p>
       <section
@@ -48,8 +49,7 @@ const Main = ({ toggle, setToggle }) => {
             type="text"
             className={s.input}
             value={name}
-            autoComplete="true"
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => handleChange(e)}
           />
           <button
             className={`${s["select-button"]} ${
@@ -71,7 +71,7 @@ const Main = ({ toggle, setToggle }) => {
             </p>
           </div>
           <ol className={s.ul}>
-            {task.map((el, i) => (
+            {task?.map((el, i) => (
               <section
                 className={`${s["list-parent"]} ${
                   toggle ? s["parent-dark"] : ""
@@ -98,22 +98,11 @@ const Main = ({ toggle, setToggle }) => {
           </ol>
         </section>
       </section>
-      <section
-        className={`${
-          popUp ? s["pop-up"] : s["hide-popUp"]
-        }`}
-      >
-        <section className={s["pop-up-text"]}>
-          <p>Well, you have a choice now!</p>
-          <p className={s["suggested-text"]}>{text}</p>{" "}
-          <button
-            className={s["suggested-button"]}
-            onClick={() => setPopUp(false)}
-          >
-            OK
-          </button>
-        </section>
-      </section>
+      <PopUp
+        popUp={popUp}
+        setPopUp={setPopUp}
+        text={text}
+      />
     </>
   );
 };

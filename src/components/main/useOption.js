@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 const useOption = () => {
   const storedItems = JSON.parse(localStorage.getItem('task'))
   const [name, setName] = useState("");
@@ -8,7 +9,9 @@ const useOption = () => {
   const [num, setNum] = useState(0);
   const [popUp, setPopUp] = useState(false);
   const [text, setText] = useState("");
-
+  const handleChange = (e) => {
+    setName(e.target.value)
+  }
   const handleClick = () => {
     setNum(1 + num);
     setName(name);
@@ -24,9 +27,8 @@ const useOption = () => {
       })
     );
     setCheckName(false);
-  };
-
-  function update() {
+  }
+  const update = () => {
     setTask([...task, name]);
     setCheckName(false);
   }
@@ -49,9 +51,8 @@ const useOption = () => {
   };
   const removeAll = () => {
     setTask([])
-    console.log(task)
   }
-  return { name, setName, task, setTask, select, checkName, popUp, setPopUp, text, handleClick, handleDelete, Random, removeAll }
+  return { name, setName, task, setTask, select, checkName, popUp, setPopUp, text, handleClick, handleDelete, Random, removeAll, handleChange }
 }
 export default useOption
 

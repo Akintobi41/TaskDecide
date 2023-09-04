@@ -1,7 +1,10 @@
 .dark-mode {
+    position: relative;
     display: flex;
     justify-content: end;
     padding: 0 1rem;
+    margin-top: 7rem;
+    z-index: 1;
 }
 
 .label {

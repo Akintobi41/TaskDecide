@@ -1,9 +1,5 @@
-import { useEffect } from "react";
 import s from "./s_darkmode.module.css";
 const DarkMode = ({ toggle, setToggle }) => {
-  //   useEffect(() => {
-  //     console.log(toggle);
-  //   }, [toggle]);
   return (
     <section className={s["dark-mode"]}>
       <div

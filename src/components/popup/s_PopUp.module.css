@@ -1,0 +1,35 @@
+.pop-up {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+.pop-up-text {
+    width: 85%;
+    max-width: 400px;
+    padding: 2rem .5rem;
+    background: var(--sec-col);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.suggested-text {
+    margin: 1rem 0;
+    font-weight: bold;
+}
+
+.suggested-button {
+    padding: .5rem 2.5rem;
+}
+
+.hide-popUp {
+    display: none;
+}

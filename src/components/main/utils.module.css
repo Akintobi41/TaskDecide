@@ -1,0 +1,136 @@
+button {
+    cursor: pointer;
+}
+
+.delete {
+    width: 30%;
+    height: 1.5rem;
+    background: var(--sec-col);
+    border: solid .5px #749BC2;
+    position: relative;
+    overflow: hidden;
+}
+
+.delete:hover {
+    background: var(--bg-col-2);
+}
+
+.delete::before {
+    content: '';
+    position: absolute;
+    top: 0%;
+    left: -80%;
+    width: 80%;
+    height: 1.5rem;
+    background: linear-gradient(90deg, transparent, #fff);
+    transition: .8s;
+}
+
+.delete:hover::before {
+    left: 100%;
+}
+
+.button {
+    position: relative;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--sec-col);
+    color: var(--pry-col);
+    box-shadow: 0 2px 4px rgba(10, 10, 11, 0.1),
+        0 4px 8px rgba(10, 10, 11, 0.001);
+    font-style: italic;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+    overflow: hidden;
+}
+
+.button:hover {
+    background: var(--bg-col-2);
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0%;
+    left: -30%;
+    width: 30%;
+    height: 2.2rem;
+    background: linear-gradient(90deg, transparent, #fff);
+    transition: 2s;
+}
+
+.button:hover::before {
+    left: 100%;
+}
+
+.select-button {
+    position: relative;
+    width: 30%;
+    height: 2rem;
+    background: var(--sec-col);
+    color: var(--pry-col);
+    border: none;
+    overflow: hidden;
+}
+
+.select-button:hover {
+    background: var(--bg-col-2);
+}
+
+.select-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -30%;
+    width: 30%;
+    height: 2rem;
+    background: linear-gradient(90deg, transparent, #fff);
+    transition: 1s;
+}
+
+.select-button:hover::before {
+    left: 100%;
+}
+
+.remove {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    font-size: .8rem;
+}
+
+.remove-all {
+    cursor: pointer;
+}
+
+.add {
+    margin-top: 1rem;
+    opacity: 1;
+    text-align: center;
+    font-size: clamp(.8rem, 1vw, 1rem);
+    letter-spacing: .2px;
+    font-style: italic;
+}
+
+.input-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    position: relative;
+}
+
+.input {
+    width: 70%;
+    height: 2rem;
+    padding: 0 .4rem;
+    border: solid .1px var(--bg-col-3);
+    outline: none;
+}
+
+.input:focus,
+.input:hover,
+.input:active {
+    border-bottom: solid .1px var(--bg-col-3);
+}
