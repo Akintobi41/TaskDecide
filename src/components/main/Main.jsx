@@ -1,7 +1,6 @@
 // import { useEffect, useState } from "react";
 import s from "./s_main.module.css";
 import useOption from "./useOption";
-import DarkMode from "../dark-mode/DarkMode";
 import PopUp from "../popup/PopUp";
 const Main = ({ toggle, setToggle }) => {
   const {
@@ -20,7 +19,6 @@ const Main = ({ toggle, setToggle }) => {
   } = useOption();
   return (
     <>
-      <DarkMode setToggle={setToggle} toggle={toggle} />
       <p className={`${s.p} ${popUp ? s["p-text"] : ""}`}>
         Explore Options, Embrace Fun: Your Day, Your Way!
       </p>
@@ -71,7 +69,7 @@ const Main = ({ toggle, setToggle }) => {
             </p>
           </div>
           <ol className={s.ul}>
-            {task?.map((el, i) => (
+            {task.map((el, i) => (
               <section
                 className={`${s["list-parent"]} ${
                   toggle ? s["parent-dark"] : ""
