@@ -1,5 +1,35 @@
 .share {
+    width: 100%;
     max-width: 500px;
     text-align: center;
     margin: auto;
+    padding: 1rem 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+
+.share-text {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    opacity: 1;
+}
+
+.share-text::before {
+    content: '';
+    position: absolute;
+    width: 10%;
+    height: 2px;
+    bottom: -5px;
+    background: linear-gradient(to bottom, #fff, var(--bg-col-3));
+    transition: all .5s;
+}
+
+.share-text:hover::before {
+    width: 100%;
+}
+
+.show {
+    opacity: .1;
 }

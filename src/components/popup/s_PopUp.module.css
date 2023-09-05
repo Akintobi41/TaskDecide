@@ -27,7 +27,18 @@
 }
 
 .suggested-button {
-    padding: .5rem 2.5rem;
+    padding: .25rem 2.25rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--pry-col);
+    color: var(--bg-col);
+    box-shadow: 0px 0px 1.5px var(--bg-col);
+}
+
+.suggested-button:hover {
+    box-shadow: 1px -1px 1.5px var(--bg-col),
+        -1px 1px 1.5px var(--bg-col);
+
 }
 
 .hide-popUp {

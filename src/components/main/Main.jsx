@@ -1,8 +1,8 @@
-// import { useEffect, useState } from "react";
 import s from "./s_main.module.css";
 import useOption from "./useOption";
 import PopUp from "../popup/PopUp";
-const Main = ({ toggle, setToggle }) => {
+import Share from "../share/Share";
+const Main = ({ toggle }) => {
   const {
     Random,
     name,
@@ -69,7 +69,7 @@ const Main = ({ toggle, setToggle }) => {
             </p>
           </div>
           <ol className={s.ul}>
-            {task.map((el, i) => (
+            {task?.map((el, i) => (
               <section
                 className={`${s["list-parent"]} ${
                   toggle ? s["parent-dark"] : ""
@@ -101,6 +101,7 @@ const Main = ({ toggle, setToggle }) => {
         setPopUp={setPopUp}
         text={text}
       />
+      <Share popUp={popUp} />
     </>
   );
 };

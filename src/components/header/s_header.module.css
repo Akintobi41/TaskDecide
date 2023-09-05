@@ -6,10 +6,10 @@
     position: fixed;
     top: 0px;
     width: 100%;
+    font-style: italic;
     z-index: 2;
 }
 
-.h3 {
-    font-style: italic;
-    font-size: clamp(1.5rem, 3.5vw, 4rem);
+.img {
+    width: 1.5rem;
 }
