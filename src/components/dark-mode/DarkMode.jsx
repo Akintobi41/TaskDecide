@@ -6,7 +6,6 @@ const DarkMode = ({ toggle, setToggle }) => {
         className={`${s.label} ${toggle ? s.switch : " "}`}
         onClick={() => setToggle(!toggle)}
       >
-        {/* <img src="" alt="" /> */}
         <div
           className={`${s.toggler} ${
             toggle ? s["toggler-dark"] : " "
