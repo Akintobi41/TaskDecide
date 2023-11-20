@@ -1,8 +1,38 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Task Decide
 
-Currently, two official plugins are available:
+Task Decide is a web-based tool that helps users save their upcoming tasks here and let their system decide what they should do next
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tools Used
+- [React](https://reactjs.org/)
+- [Prettier](https://prettier.io/)
+
+## Getting Started
+
+To use this application locally, follow these steps:
+
+### Prerequisites
+
+Make sure you have Node.js and npm (Node Package Manager) installed on your system.
+
+### Installation
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/TaskDecide.git
+
+2. Change your working directory to the project folder:
+     cd what To Do 
+
+3. Install project dependencies:
+   npm install
+
+4. Start the development server:
+   npm run dev
+
+The application should now be accessible at http://localhost:3000 in your web browser.
+
+
+ 
+
+
